@@ -5,7 +5,7 @@ variable "zone" {
 }
 variable "subnet_id" {}
 variable "image_id" {
-  default = "fd80j21lmqard15ciskf" # Ubuntu 24.04 LTS
+  default = "fd81j24uiba37h24jdla" # ALSE 1.8.1uu1 base
 }
 variable "service_account_key_file" {
   type        = string
