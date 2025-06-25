@@ -1,0 +1,6 @@
+---
+- name: Настройка pet-проекта
+  hosts: pet-vm
+  become: true
+  roles:
+    - k3s

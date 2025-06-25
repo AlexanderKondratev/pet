@@ -1,0 +1,21 @@
+---
+- name: Установка curl (для скачивания k3s)
+  apt:
+    name: curl
+    state: present
+    update_cache: yes
+
+- name: Установка k3s через официальный скрипт
+  shell: |
+    curl -sfL https://get.k3s.io | sh -
+  args:
+    creates: /usr/local/bin/k3s
+
+- name: Проверка статуса k3s
+  shell: systemctl is-active k3s
+  register: k3s_status
+  changed_when: false
+
+- name: Показать статус k3s
+  debug:
+    msg: "k3s статус: {{ k3s_status.stdout }}"
