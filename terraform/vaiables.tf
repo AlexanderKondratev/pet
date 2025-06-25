@@ -1,4 +1,3 @@
-variable "yc_token" {}
 variable "cloud_id" {}
 variable "folder_id" {}
 variable "zone" {
@@ -7,4 +6,8 @@ variable "zone" {
 variable "subnet_id" {}
 variable "image_id" {
   default = "fd8p8vbhh4thsgfh6v7s" # Ubuntu 22.04 LTS
+}
+variable "service_account_key_file" {
+  type        = string
+  description = "JSON-ключа сервисного аккаунта"
 }
